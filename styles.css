@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #ffff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 16px;
+  position: absolute;
+  bottom: 80px;
+  left: 15px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel h4 {
+  font-size: 10px;
+  position: absolute;
+  bottom: 60px;
+  left: 15px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel h5 {
+  font-size: 10px;
+  position: absolute;
+  bottom: 35px;
+  left: 15px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s; /*The first selector tells you what is to be affected in this case opacity, the second is the trnasition delay in how long the animation should play for, the third is the type of easing that gets applied to the animation keyframes and the forth is the delay timer that adds a delay of 0.4s before the animation starts playing*/
+}
+
+.panel.active h4 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active h5 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
+}
